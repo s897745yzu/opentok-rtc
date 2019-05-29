@@ -225,6 +225,10 @@ function ServerMethods(aLogLevel, aModules) {
       default:
         aRes.set('X-Frame-Options', 'DENY');
     }
+    aRes.set("Access-Control-Allow-Origin", "*");
+    aRes.set("Access-Control-Allow-Methods", "*");
+    aRes.set("Access-Control-Allow-Headers", "Access-Control-Allow-Origin, Access-Control-Allow-Methods, X-Powered-By, Origin, X-Requested-With, Content-Type, Content-Length, Accept, Authorization");
+
     aNext();
   }
 
